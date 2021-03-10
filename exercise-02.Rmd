@@ -20,35 +20,36 @@ I have listed tasks for you below. I am also going to show you how to solve the 
 2. Inside the code chunk, write: library(tidyverse)
 3. Click on the green play button in the top right of the code chunk you have created
 
-```{r}
 
-library(tidyverse)
 
-```
+**Delete this text and place the code chunk here**
+
+
 
 ## Your turn 2 - Import JMP WASH data
 
 1. Add a new code chunk by clicking on the green C+ at the top of this window
 2. Inside the code chunk, write: read_csv("data/washdata.csv")
 3. Click on the green play button in the top right of the code chunk you have created
+
 4. Inside the code chunk, on the same line as the current code, add: washdata <- 
 5. Click on the green play button in the top right of the code chunk
+
 6. In the top right pane, click on the tab "Environment"
 7. Locate the data in the window and click on the text "washdata"
 
 
-```{r}
 
-washdata <- read_csv("data/washdata.csv")
+**Delete this text and place the code chunk here**
 
-```
+
 
 # Your turn 3 - Transform Data
 
 1. Click on the green play button in the top right of the code chunk
 2. Inspect the code that is written in the code chunk and try to identify what is happening
 3. In the top right pane, click on the tab "Environment"
-4. Locate the data in the window and click on the text "washdata"
+4. Locate the data in the window and click on the text "washdata_uga"
 
 ```{r}
 
