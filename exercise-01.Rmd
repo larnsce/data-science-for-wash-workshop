@@ -2,7 +2,7 @@
 title: "My first R Markdown report"
 author: "Add your name here"
 output: html_document
-editor_options: 
+editor_options:
   chunk_output_type: console
 ---
 
@@ -36,13 +36,14 @@ library(tidyverse)
 6. In the top right pane, click on the tab "Environment"
 7. Locate the data in the window and click on the text "washdata"
 
+
 ```{r}
 
-washdata <- read_csv("data/jmp_washdata_indicators_sml.csv")
+washdata <- read_csv("data/washdata.csv")
 
 ```
 
-# Your turn - Transform Data
+# Your turn 3 - Transform Data
 
 1. Click on the green play button in the top right of the code chunk
 2. Inspect the code that is written in the code chunk and try to identify what is happening
@@ -54,8 +55,11 @@ washdata <- read_csv("data/jmp_washdata_indicators_sml.csv")
 washdata_uga <- washdata %>%
   filter(iso3 == "UGA") %>% 
   filter(year == 2017) %>% 
-  filter(residence == "national") %>% 
-  filter(service == "sanitation")
-
+  filter(residence == "national") 
 ```
+
+# Your Turn 4 - Communicate
+
+1. Scroll to the top of the document and add your name inside the quotation marks "Add your name" next to author: 
+2. Click on the Knit button (the blue yarn and needle emoticon on the top of this window) 
 
