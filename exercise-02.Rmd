@@ -1,28 +1,100 @@
 ---
-title: ''
+title: "Report on Water, Sanitation and Hygiene"
 output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# Your turn
+
+The code for this exercise is already written. A lot of what is written in here will look foreign to you, but if you knit the document and inspect the code together witht plots that are created, then you may be able to identify how some parts of the code relate to the output.
+
+1. Knit the document by clicking on the Knit Button on the top of this window
+2. Inspect the document in the window on the bottom right
+
+
+# Load R packages and import data
+
+```{r}
+
+# load libraries
+library(tidyverse)
+library(wbstats)
+
+# import data
+washdata <- read_csv("data/washdata.csv")
+
 ```
 
-## R Markdown
+# Report
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+You work in Uganda and every 5 years your prepare a report for the East African Summit on WASH on how Uganda is performing on WASH.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+In previous years, you have downloaded the helpful plots from the washdata.org website and compiled them into a short report.
 
-```{r cars}
-summary(cars)
+You realize that you are performing the same task every year. Maybe there is another way to do this more efficiently.
+
+```{r}
+
+
 ```
 
-## Including Plots
+```{r}
 
-You can also embed plots, for example:
+# Pre-select your country, year and residence and service here
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+washdata_uga <- washdata %>%
+  filter(iso3 == "UGA") %>% 
+  filter(year == 2017) %>% 
+  filter(residence == "national") 
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+# Global analysis
+
+# Country analysis
+
+## Water
+
+```{r}
+
+washdata_uga %>% 
+  filter(service == "water") %>% 
+  filter(indicator_type == "water_ladder") %>% 
+  
+  ggplot(aes(x = service, y = percent, fill = indicator)) +
+  geom_col() +
+  theme_minimal()
+
+```
+
+## Sanitation
+
+```{r}
+
+washdata_uga  %>% 
+  filter(service == "sanitation") %>% 
+  filter(indicator_type == "sanitation_ladder") %>% 
+  
+  ggplot(aes(x = service, y = percent, fill = indicator)) +
+  geom_col() +
+  theme_minimal()
+
+```
+
+## Hygiene
+
+```{r}
+
+washdata_uga %>% 
+  filter(service == "hygiene") %>% 
+  filter(indicator_type == "hygiene_ladder") %>% 
+  
+  ggplot(aes(x = service, y = percent, fill = indicator)) +
+  geom_col() +
+  theme_minimal()
+
+```
+
+```{r child = "setup/setup.Rmd"}
+
+```
