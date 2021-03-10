@@ -1,10 +1,12 @@
 ---
-title: "Report on Water, Sanitation and Hygiene"
+title: "Report on WASH Ladders"
+subtitle: "For `r params$iso3` on a `r params$residence` level in `r params$year`"
+date: "`r Sys.Date()`"
 author: "Add your name here"
 output: html_document
 params:
     year: 2017
-    iso3: SEN
+    iso3: UGA
     residence: national
 editor_options: 
   chunk_output_type: console
@@ -21,7 +23,7 @@ The code for this exercise is already written. A lot of what is written in here 
 1. Knit the document by clicking on the Knit Button on the top of this window
 2. Inspect the document in the window on the bottom right
 3. Look up the ISO3 country code for a country of your choice 
-4. Change the ISO3 country code at the top of the document next to ISO3
+4. Replace the ISO3 country code at the top of the document under params and next to iso3 with your ISO3 code
 
 # Parameterised reports
 
