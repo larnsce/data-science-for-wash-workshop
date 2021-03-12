@@ -1,12 +1,15 @@
 ---
 title: "Report on WASH Ladders"
-subtitle: "For `r params$iso3` on a `r params$residence` level in `r params$year`"
+subtitle: "For `r params$name` on a `r params$residence` level in `r params$year`"
 date: "`r Sys.Date()`"
 author: "Add your name here"
-output: html_document
+output: 
+  html_document: 
+    toc: yes
+    toc_float: yes
 params:
     year: 2017
-    iso3: UGA
+    name: Uganda
     residence: national
 editor_options: 
   chunk_output_type: console
@@ -21,9 +24,10 @@ editor_options:
 The code for this exercise is already written. A lot of what is written in here will look foreign to you, but if you knit the document and inspect the code together with the plots and tables that are created, then you may be able to identify how some parts of the code relate to the output.
 
 1. Knit the document by clicking on the Knit Button on the top of this window
-2. Inspect the document in the window on the bottom right
-3. Look up the ISO3 country code for a country of your choice 
-4. Replace the ISO3 country code at the top of the document under params and next to iso3 with your ISO3 code
+2. Inspect the document that opens
+
+3. Go back to the top of the document and change the name to a country name of your choice
+4. Knit the document by clicking on the Knit Button on the top of this window 
 
 # Parameterised reports
 
@@ -49,9 +53,9 @@ The ISO3 country code, the year and residence are pre-selected here using parame
 
 ```{r}
 
-# smaller subset of data is used
+# smaller subset of data is used. Here is where we use parameters defined at the top of the document
 washdata_sml <- washdata %>%
-  filter(iso3 == params$iso3) %>% 
+  filter(name == params$name) %>% 
   filter(year == params$year) %>% 
   filter(residence == params$residence) 
   
