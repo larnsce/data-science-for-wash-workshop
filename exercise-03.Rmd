@@ -3,15 +3,11 @@ title: "Report on WASH Ladders"
 author: "Add your name here"
 date: "`r Sys.Date()`"
 output:
-  word_document:
-    toc: yes
   html_document:
     toc: yes
     toc_float: yes
     highlight: tango
     theme: flatly
-  pdf_document:
-    toc: yes
 subtitle: For `r params$name` on a `r params$residence` level in `r params$year`
 params:
   year: 2017
@@ -71,7 +67,7 @@ washdata <- read_csv("data/washdata.csv")
 
 ```
 
-The ISO3 country code, the year and residence are pre-selected here using parameters from the top of the document.
+The country name, the year and residence are pre-selected here using parameters from the top of the document.
 
 ```{r}
 
